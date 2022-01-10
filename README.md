@@ -1,2 +1,1 @@
-# MyDots
-These are my dot files.
+#These are my dot files.
