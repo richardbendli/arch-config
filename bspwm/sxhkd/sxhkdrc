@@ -24,6 +24,14 @@ super + b
 ctrl + alt + c
     conky-toggle
 
+# gitkraken
+super + alt + g
+	gitkraken
+
+#vscodium
+super + alt + v
+	vscodium
+
 #Htop
 super + h
     urxvt 'htop task manager' -e htop
@@ -353,7 +361,7 @@ ctrl + alt + Right
 	bspc node --focus east
 
 # Focus Up window
-ctrl +alt + Up
+ctrl + alt + Up
 	bspc node --focus north
 
 # Focus Down window
