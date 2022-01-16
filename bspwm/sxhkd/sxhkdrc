@@ -36,10 +36,6 @@ super + alt + v
 super + h
     urxvt 'htop task manager' -e htop
 
-#neovim
-super + n
-	nvim
-
 #Urxvt
 super + t
     urxvt
