@@ -28,9 +28,9 @@ ctrl + alt + c
 super + alt + g
 	gitkraken
 
-#vscodium
-super + alt + v
-	vscodium
+#vscode
+super + c
+	code
 
 #Htop
 super + h
@@ -48,6 +48,14 @@ super + Return
 #pcmanfm
 super + p
 	pcmanfm
+	
+#krusader
+super + k
+	krusader
+
+#btop
+super + alt + b
+	btop
 
 
 #################################################################
