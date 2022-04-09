@@ -728,7 +728,7 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-underline = #3EC13F
+format-underline = #5e81ac
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
