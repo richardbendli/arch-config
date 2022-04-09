@@ -415,8 +415,8 @@ date-alt = " %d-%m-%Y"
 time = %H:%M
 time-alt = %H:%M
 format-prefix = " "
-format-prefix-foreground = #1DA449
-format-underline = #1DA449
+format-prefix-foreground = #5e81ac
+format-underline = #5e81ac
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %date% %time%
@@ -530,8 +530,8 @@ interval = 1024
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = "  "
-format-prefix-foreground = #1DA449
-format-underline = #1DA449
+format-prefix-foreground = #5e81ac
+format-underline = #5e81ac
 
 ################################################################################
 
