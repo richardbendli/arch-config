@@ -96,7 +96,7 @@ alias vim="nvim"
 
 #---------------------------------------------------------------
 
-#grub update
+# grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # pacman and yay
