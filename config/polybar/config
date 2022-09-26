@@ -4,7 +4,7 @@
 ;   go to https://github.com/jaagr/polybar
 ;
 ;   The README contains alot of information
-;	 Themes : https://github.com/jaagr/dots/tree/master/.local/etc/themer/themes
+;	Themes : https://github.com/jaagr/dots/tree/master/.local/etc/themer/themes
 ;   https://github.com/jaagr/polybar/wiki/
 ;   https://github.com/jaagr/polybar/wiki/Configuration
 ;   https://github.com/jaagr/polybar/wiki/Formatting
@@ -38,18 +38,41 @@ format-margin =
 format-offset =
 
 [colors]
-;============ theme ============
+; Nord theme ============
 background = #282a2e
 foreground = #f3f4f5
+foreground-active = #f051ea
 occupied = #cccccc
+occupied-active = #6790EB
 active = #5e81ac
 alert = #d08770
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
-; ==============================
+; =======================
 
-################################################################################
+; Gotham theme ==========
+; background = #0a0f14
+; foreground = #99d1ce
+; alert = #d26937
+; volume-min = #2aa889
+; volume-med = #edb443
+; volume-max = #c23127
+; =======================
+
+; INTRCPTR theme ============
+;background = ${xrdb:color0:#222}
+;background = #aa000000
+;background-alt = #444
+;foreground = ${xrdb:color7:#222}
+;foreground = #fff
+;foreground-alt = #555
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+
+
+
 ################################################################################
 ################################################################################
 ############                  MAINBAR-BSPWM                         ############
@@ -66,7 +89,6 @@ height = 30
 radius = 0.0
 fixed-center = true
 bottom = false
-;bottom = true
 separator = |
 
 background = ${colors.background}
@@ -102,12 +124,8 @@ font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
 
 modules-left = bspwm xwindow
-modules-center = 
+modules-center =
 modules-right = kernel date pavolume
-
-;modules-left = load-average
-;modules-center = 
-;modules-right = filesystem
 
 tray-detached = false
 tray-offset-x = 0
@@ -123,6 +141,76 @@ scroll-down = bspwm-deskprev
 
 
 ################################################################################
+################################################################################
+############                  MAINBAR-BSPWM-EXTRA                   ############
+################################################################################
+################################################################################
+
+[bar/mainbar-bspwm-extra]
+monitor = ${env:MONITOR}
+;monitor-fallback = HDMI1
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 0.0
+fixed-center = true
+bottom = true
+separator = |
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+wm-restack = bspwm
+override-redirect = true
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
+
+border-size = 0
+;border-left-size = 0
+;border-right-size = 25
+;border-top-size = 0
+;border-bottom-size = 25
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 3
+module-margin-right = 3
+
+;https://github.com/jaagr/polybar/wiki/Fonts
+font-0 = "Noto Sans:size=10;0"
+font-1 = "FontAwesome:size=13;0"
+font-2 = "Noto Sans:size=10;0"
+font-3 = "Noto Sans Mono:size=10;0"
+
+modules-left = load-average
+modules-center =
+modules-right = kernel date pavolume
+
+;tray-detached = false
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 2
+;tray-maxsize = 20
+;tray-scale = 1.0
+;tray-position = right
+;tray-background = ${colors.background}
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+
+################################################################################
+################################################################################
+
+
 ################################################################################
 ################################################################################
 ############                       MODULE BSPWM                     ############
@@ -141,12 +229,12 @@ ws-icon-0 = 1;|1|
 ws-icon-1 = 2;|2|
 ws-icon-2 = 3;|3|
 ws-icon-3 = 4;|4|
-ws-icon-4 = 5;|5|
-;ws-icon-5 = 6;|6|
-;ws-icon-6 = 7;|7|
-;ws-icon-7 = 8;|8|
-;ws-icon-8 = 9;|9|
-;ws-icon-9 = 10;|10|
+;ws-icon-4 = 5;
+;ws-icon-5 = 6;
+;ws-icon-6 = 7;
+;ws-icon-7 = 8;
+;ws-icon-8 = 9;
+;ws-icon-9 = 10;
 ws-icon-default = " "
 
 
@@ -230,7 +318,6 @@ format-underline = #FFBB00
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-;card = amdgpu_b10
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix-foreground = #7D49B6
@@ -246,7 +333,6 @@ type = internal/backlight
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
 card = intel_backlight
-;card = amdgpu_b10
 
 ; Available tags:
 ;   <label> (default)
@@ -423,6 +509,22 @@ label = %date% %time%
 
 #################################################################
 
+[module/discord]
+type = custom/script
+exec = echo " Discord "
+;exec = echo " "
+interval = 1
+tail = true
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix-foreground = #738adb
+format-underline = #738adb
+click-left = discord &
+click-right = killall Discord && killall Discord
+format-prefix = ""
+
+#################################################################
+
 [module/ewmh]
 type = internal/xworkspaces
 
@@ -430,7 +532,6 @@ pin-workspaces = false
 enable-click = true
 enable-scroll = true
 reverse-scroll = true
-
 
 icon-0 = 1;
 icon-1 = 2;
@@ -442,12 +543,13 @@ format = <label-state>
 label-monitor = %name%
 
 label-active = %name%
-label-active-foreground = ${colors.foreground}
+label-active-foreground = ${colors.foreground-active}
 label-active-background = ${colors.background}
 label-active-underline= #6790eb
 label-active-padding = 2
 
 label-occupied = %name%
+label-occupied-foreground = ${colors.occupied-active}
 label-occupied-background = ${colors.background}
 label-occupied-padding = 2
 
@@ -457,13 +559,54 @@ label-urgent-background = ${colors.alert}
 label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
 
-
 label-empty = %name%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
+
+#################################################################
+
+[module/ewmh-noscroll]
+type = internal/xworkspaces
+
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+#icon-5 = 6;
+format = <label-state>
+label-monitor = %name%
+
+label-active = %name%
+label-active-foreground = ${colors.foreground-active}
+label-active-background = ${colors.background}
+label-active-underline= #6790eb
+label-active-padding = 2
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.occupied-active}
+label-occupied-background = ${colors.background}
+label-occupied-padding = 2
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.alert}
+label-urgent-underline = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
 ################################################################################
 
@@ -532,6 +675,16 @@ format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = #5e81ac
 format-underline = #5e81ac
+
+################################################################################
+
+[module/jgmenu]
+type = custom/script
+interval = 120
+exec = echo "ArcoLinux"
+click-left = "jgmenu_run >/dev/null 2>&1 &"
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
 ################################################################################
 
@@ -771,6 +924,65 @@ content-foreground = ${colors.foreground}
 content-background =  ${colors.background}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+
+################################################################################
+
+[module/spotify1]
+;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
+type = custom/script
+exec = ~/.config/polybar/scripts/spotify1.sh
+interval = 1
+
+;format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-padding = 2
+format-underline = #0f0
+format-prefix = "  "
+format-prefix-foreground = #0f0
+label = %output:0:150%
+
+################################################################################
+
+[module/spotify2]
+;install zscroll
+;https://github.com/PrayagS/polybar-spotify
+type = custom/script
+tail = true
+format-prefix = "  "
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+
+[module/spotify-prev]
+type = custom/script
+exec = echo ""
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+click-left = playerctl previous spotify
+click-right = spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo ""
+initial = 1
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+click-left = playerctl play-pause spotify
+click-right = spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo ""
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+click-left = playerctl next spotify
+click-right = spotify
 
 ################################################################################
 
