@@ -236,11 +236,6 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 #neofetch
 #screenfetch
 #alsi
-#paleofetch
-#fetch
-#hfetch
-#sfetch
-#ufetch
 #ufetch-arco
 #pfetch
 #sysinfo
