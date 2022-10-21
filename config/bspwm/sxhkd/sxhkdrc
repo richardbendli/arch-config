@@ -15,6 +15,25 @@ super + F12
 # SUPER + ... KEYS
 #################################################################
 
+# lockscreen
+super + l
+    betterlockscreen -l
+#    betterlockscreen -l blur
+
+
+# notifications
+#ctrl + space
+#  dunstctl close
+
+#ctrl + shift + space
+#  dunstctl close-all
+
+#ctrl + shift + period
+#  dunstctl context
+
+#ctrl + grave
+#  dunstctl history-pop
+
 
 #Browser
 super + b
@@ -48,7 +67,7 @@ super + Return
 #pcmanfm
 super + p
 	pcmanfm
-	
+
 #krusader
 super + k
 	krusader
@@ -386,9 +405,6 @@ super + shift + {1-9,0}
 
 #################################################################
 
-
-## super & mouse scroll
-
 # Focused desktop window gap
 super + button{4,5}
   bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
@@ -396,13 +412,7 @@ super + button{4,5}
 #################################################################
 
 # launch vifm file manager
-#super + alt + 
+#super + alt +
 #	st -e ./.config/vifm/scripts/vifmrun
 
-
-
-
-
-
-#################################################################
 
