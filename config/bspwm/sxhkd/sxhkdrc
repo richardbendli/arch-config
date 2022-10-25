@@ -160,9 +160,9 @@ ctrl + Print
 #===================================== rofi =====================================
 
 #rofi
-#super + F12
+super + F12
 #    rofi -show drun -show-icons -font "Noto Sans 14"
-
+     rofi -show drun
 #super + p
 #    rofi -show power-menu -modi power-menu:rofi-power-menu
 
