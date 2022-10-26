@@ -436,5 +436,26 @@ ctrl + alt + o
 
 
 
+#===================================== arcolinux =====================================
+
+#arcolinux-logout
+ctrl + alt + l
+    archlinux-logout
+
+#Pamac-manager
+ctrl + alt + p
+    pamac-manager
+
+
+#arcolinux-welcome-app
+ctrl + alt + w
+     arcolinux-welcome-app
+
+#arcolinux-tweak-tool
+ctrl + alt + e
+    arcolinux-tweak-tool
+
+
+
 #======================================================================================
 #======================================================================================
