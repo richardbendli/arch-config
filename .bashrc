@@ -101,12 +101,6 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # pacman and yay
 alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
-# alias yaysua='yay -Sua --noconfirm'              # update only AUR pkgs (yay)
-# alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
-# alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
-# alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
-# alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
-# alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
 #---------------------------------------------------------------
 
@@ -208,13 +202,6 @@ alias xd="ls /usr/share/xsessions"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
-
-# gpg encryption
-# verify signature for isos
-# alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# receive the key of a developer
-# alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
 
 #---------------------------------------------------------------
 

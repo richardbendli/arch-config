@@ -49,11 +49,4 @@ picom --config $HOME/.config/bspwm/picom.conf &
 #run volumeicon &
 #nitrogen --restore &
 #run caffeine &
-#run vivaldi-stable &
-#run firefox &
-#run thunar &
-#run dropbox &
-#run insync start &
-#run discord &
-#run spotify &
-#run atom &
+
