@@ -30,7 +30,7 @@ fi
 #Some ways to set your wallpaper besides variety or nitrogen
 #feh --bg-scale ~/.config/bspwm/wall.png &
 feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
-#feh --randomize --bg-fill ~/Képek/*
+#feh --randomize --bg-fill ~/Pictures/*
 #feh --randomize --bg-fill ~/Dropbox/Apps/Desktoppr/*
 
 dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
